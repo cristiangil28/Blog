@@ -38,4 +38,8 @@ class Autor
     public function getNombre(){
         return $this->nombre;
     }
+
+    public function getApellido(){
+        return $this->apellidos;
+    }
 }

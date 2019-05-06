@@ -76,4 +76,8 @@ class Posts
     public function getImagen(){
         return $this->imagen;
     }
+
+    public function getTexto(){
+        return $this->texto;
+    }
 }
