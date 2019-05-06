@@ -10,8 +10,57 @@
 </head>
 
 <body>
-    {% block body %}{% endblock %}
-    {% block javascripts %}{% endblock %}
+    <style>
+            ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+    </style>
+    <ul>
+        <li><a  href="/">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="/post">Blog</a></li>
+        <li><a href="/contactos/new">Contacto</a></li>
+    </ul>
+
+
+    {% block body %}
+
+    {% endblock %}
+    {% block javascripts %}
+        <script>
+                $('li a').click(function(e) {
+        //e.preventDefault();
+        var $this = $(this);
+        $this.closest('ul').find('li.active,a.active').removeClass('active');
+        $this.addClass('active');
+        $this.parent().addClass('active');
+
+    });
+        </script>
+    {% endblock %}
 </body>
 
 </html>

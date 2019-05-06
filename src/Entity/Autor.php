@@ -35,11 +35,22 @@ class Autor
      */
     private $apellidos;
 
-    public function getNombre(){
+    public function getNombre()
+    {
         return $this->nombre;
     }
 
-    public function getApellido(){
+    public function getApellido()
+    {
         return $this->apellidos;
+    }
+
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+    }
+    public function setApellido($apellido)
+    {
+        $this->apellidos = $apellido;
     }
 }

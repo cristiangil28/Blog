@@ -8,7 +8,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PostController extends AbstractController
 {
-    
+    /**
+     * @Route("/", name="home")
+     */
+    public function home(){
+        return $this->render('index.html.twig', [
+            'controller_name' => 'PostController',
+            ]);
+    }
      /**
      * @Route("/post", name="post")
      */
